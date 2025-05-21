@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package pb;
+
+option go_package = "../internal/pb";
+
+service EmailerService {
+  rpc SendEmail(SendEmailRequest) returns (SendEmailResponse);
+}
+
+message SendEmailRequest {
+  string toEmail = 1;
+}
+
+message SendEmailResponse {
+  string status = 1;
+  string message = 2;
+}
